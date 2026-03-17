@@ -1,91 +1,91 @@
-# ?뫔 CareBaby ??AI 湲곕컲 ?≪븘 湲곕줉 ??
+# 👶 CareBaby — AI 기반 육아 기록 앱
 
-> ?섏쑀쨌?섎㈃쨌湲곗?洹 湲곕줉遺??AI ?⑦꽩 遺꾩꽍源뚯?, ?≪븘??紐⑤뱺 ?쒓컙???ㅻ쭏?명븯寃?湲곕줉?섏꽭??
-
-<br/>
-
-## ?벑 ?ㅽ겕由곗꺑
-
-<!-- ?ㅽ겕由곗꺑 異붽? ?덉젙 -->
+> 수유·수면·기저귀 기록부터 AI 패턴 분석까지, 육아의 모든 순간을 스마트하게 기록하세요.
 
 <br/>
 
-## ??二쇱슂 湲곕뒫
+## 📱 스크린샷
 
-| 湲곕뒫 | ?ㅻ챸 |
+<!-- 스크린샷 추가 예정 -->
+
+<br/>
+
+## ✨ 주요 기능
+
+| 기능 | 설명 |
 |---|---|
-| ?뱤 AI ?몄궗?댄듃 | ?섎㈃ 遺議?媛먯?, ?섏쑀 媛꾧꺽 蹂?? ?ㅼ쓬 ?섏쑀 ?덉륫 ??濡쒖뺄 ?듦퀎 湲곕컲 AI 遺꾩꽍 |
-| ??鍮좊Ⅸ 湲곕줉 | ???붾㈃?먯꽌 ?섏쑀쨌?섎㈃쨌湲곗?洹쨌?댁쑀???먰꽣移?湲곕줉 |
-| ?봽 ?ㅼ떆媛??숆린??| 怨듬룞 ?묒쑁?먯? Supabase Realtime 湲곕컲 ?ㅼ떆媛??곗씠??怨듭쑀 |
-| ?뱢 ?듦퀎 ??쒕낫??| 7??14??湲곌컙蹂?諛?李⑦듃 + ?됯퇏/理쒕?媛??쒓컖??|
-| ?뫅?랅윉⒱랅윉??ㅼ쨷 ?꾧린 吏??| ?щ윭 ?꾧린 ?꾨줈???꾪솚 諛?珥덈? 肄붾뱶 湲곕컲 怨듬룞 ?묒쑁???곌껐 |
-| ?뙔 ??꾨씪??| ?쒓컙??湲곕줉 ??꾨씪?? ?ㅼ??댄봽 ??젣, ?곷? ?쒓컙 ?쒖떆 |
+| 📊 AI 인사이트 | 수면 부족 감지, 수유 간격 변화, 다음 수유 예측 등 로컬 통계 기반 AI 분석 |
+| ⚡ 빠른 기록 | 홈 화면에서 수유·수면·기저귀·이유식 원터치 기록 |
+| 🔄 실시간 동기화 | 공동 양육자와 Supabase Realtime 기반 실시간 데이터 공유 |
+| 📈 통계 대시보드 | 7일/14일 기간별 바 차트 + 평균/최대값 시각화 |
+| 👨‍👩‍👧 다중 아기 지원 | 여러 아기 프로필 전환 및 초대 코드 기반 공동 양육자 연결 |
+| 🌙 타임라인 | 시간순 기록 타임라인, 스와이프 삭제, 상대 시간 표시 |
 
 <br/>
 
-## ?썱 湲곗닠 ?ㅽ깮
+## 🛠 기술 스택
 
 ```
-Frontend   React Native 0.81 쨌 Expo SDK 54 쨌 TypeScript
-?곹깭愿由?   Zustand 쨌 MMKV (罹먯떛)
-Backend    Supabase (PostgreSQL 쨌 Realtime 쨌 RLS 쨌 Edge Functions)
-UI         lucide-react-native 쨌 react-native-svg 쨌 lottie-react-native
+Frontend   React Native 0.81 · Expo SDK 54 · TypeScript
+상태관리    Zustand · MMKV (캐싱)
+Backend    Supabase (PostgreSQL · Realtime · RLS · Edge Functions)
+UI         lucide-react-native · react-native-svg · lottie-react-native
 ```
 
 <br/>
 
-## ?룛 ?꾪궎?띿쿂
+## 🏗 아키텍처
 
 ```
-app/                   Expo Router 湲곕컲 ?뚯씪 ?쇱슦??
-?쒋?? (auth)/            濡쒓렇?맞룻쉶?먭???
-?쒋?? (tabs)/            ?댟룻넻怨꽷룹꽕????
-??  ?쒋?? index.tsx      ????쒕낫??
-??  ?쒋?? stats.tsx      ?듦퀎 ?붾㈃
-??  ?붴?? settings.tsx   ?ㅼ젙쨌?꾧린 愿由?
-?쒋?? baby-setup.tsx     ?꾧린 ?깅줉쨌?섏젙
+app/                   Expo Router 기반 파일 라우팅
+├── (auth)/            로그인·회원가입
+├── (tabs)/            홈·통계·설정 탭
+│   ├── index.tsx      홈 대시보드
+│   ├── stats.tsx      통계 화면
+│   └── settings.tsx   설정·아기 관리
+├── baby-setup.tsx     아기 등록·수정
 components/
-?쒋?? home/              ???붾㈃ 而댄룷?뚰듃 (InsightCard, TimerCardList, TimelineList...)
-?쒋?? stats/             ?듦퀎 而댄룷?뚰듃 (BarChart, StatSummaryCard...)
-?쒋?? records/           湲곕줉 ?낅젰 ??
-?붴?? ui/                怨듯넻 UI (BottomSheet, RichText, SliderInput...)
-stores/                Zustand ?ㅽ넗??(auth, baby, record, insight, ui)
+├── home/              홈 화면 컴포넌트 (InsightCard, TimerCardList, TimelineList...)
+├── stats/             통계 컴포넌트 (BarChart, StatSummaryCard...)
+├── records/           기록 입력 폼
+└── ui/                공통 UI (BottomSheet, RichText, SliderInput...)
+stores/                Zustand 스토어 (auth, baby, record, insight, ui)
 lib/
-?쒋?? insightEngine.ts   AI ?몄궗?댄듃 濡쒖쭅 (AAP 湲곗? ?섎㈃ 沅뚯옣????
-?붴?? supabase.ts        Supabase ?대씪?댁뼵??
+├── insightEngine.ts   AI 인사이트 로직 (AAP 기준 수면 권장량 등)
+└── supabase.ts        Supabase 클라이언트
 ```
 
 <br/>
 
-## ?쨼 AI ?몄궗?댄듃 ?곸꽭
+## 🤖 AI 인사이트 상세
 
-AAP(誘멸뎅?뚯븘怨쇳븰?? 2017 媛?대뱶?쇱씤 湲곕컲 濡쒖뺄 ?듦퀎 ?붿쭊:
+AAP(미국소아과학회) 2017 가이드라인 기반 로컬 통계 엔진:
 
-- **?섎㈃ 遺議?媛먯?** ???붾졊蹂?沅뚯옣 ?섎㈃ ?쒓컙怨?理쒓렐 7???됯퇏 鍮꾧탳
-- **?섏쑀 媛꾧꺽 蹂??* ??14???꾨컲/?꾨컲 ?섏쑀 媛꾧꺽 蹂?붿쑉 媛먯? (15% ?댁긽 ???뚮┝)
-- **?ㅼ쓬 ?섏쑀 ?덉륫** ??理쒓렐 3???⑦꽩 湲곕컲 ?ㅼ쓬 ?섏쑀 ?쒓컖 ?덉륫
-- **湲곗?洹 ?⑦꽩 ?뚮┝** ??理쒓렐 3???잛닔媛 7???됯퇏 ?鍮?30% ?댁긽 媛먯냼 ??寃쎄퀬
-- **二쇨컙 ?붿빟** ???섏쑀쨌?섎㈃쨌湲곗?洹쨌?댁쑀???쇳룊洹??먮룞 ?붿빟
+- **수면 부족 감지** — 월령별 권장 수면 시간과 최근 7일 평균 비교
+- **수유 간격 변화** — 14일 전반/후반 수유 간격 변화율 감지 (15% 이상 시 알림)
+- **다음 수유 예측** — 최근 3일 패턴 기반 다음 수유 시각 예측
+- **기저귀 패턴 알림** — 최근 3일 횟수가 7일 평균 대비 30% 이상 감소 시 경고
+- **주간 요약** — 수유·수면·기저귀·이유식 일평균 자동 요약
 
 <br/>
 
-## ?벀 媛쒕컻 ?섍꼍 ?ㅼ젙
+## 📦 개발 환경 설정
 
 ```bash
 git clone https://github.com/chry8822/CareBaby.git
 cd CareBaby
 npm install
 
-# .env ?뚯씪 ?앹꽦
+# .env 파일 생성
 cp .env.example .env
-# EXPO_PUBLIC_SUPABASE_URL, EXPO_PUBLIC_SUPABASE_ANON_KEY ?낅젰
+# EXPO_PUBLIC_SUPABASE_URL, EXPO_PUBLIC_SUPABASE_ANON_KEY 입력
 
 npx expo start
 ```
 
 <br/>
 
-## ?뱞 ?쇱씠?좎뒪
+## 📄 라이선스
 
-Copyright 짤 2026 CareBaby. All rights reserved.  
-蹂??꾨줈?앺듃???뚯뒪肄붾뱶???ъ쟾 ?덇? ?놁씠 ?곸뾽?곸쑝濡??ъ슜?????놁뒿?덈떎.
+Copyright © 2026 CareBaby. All rights reserved.  
+본 프로젝트의 소스코드는 사전 허가 없이 상업적으로 사용할 수 없습니다.
